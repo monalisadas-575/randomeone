@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class BankAccount{
   private int balance = 200;
   private final Lock lock = new ReentrantLock();
-//todo with synchronized use
+
  /* public synchronized void withdraw(int amount){
       System.out.println(Thread.currentThread().getName() + "attempting to withdraw amount "+amount);
       if(amount < balance){
