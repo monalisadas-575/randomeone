@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class FairnessLockExample {
     private final Lock unFairlock = new ReentrantLock(true);
-    //By adding fairness true it will give access to that thread first whi will request first
+    //By adding fairness true it will give access to that thread first which will request first
 
     public void accessResource(){
         unFairlock.lock();
