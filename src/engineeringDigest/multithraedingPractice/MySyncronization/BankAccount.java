@@ -36,7 +36,7 @@ public class BankAccount{
                         System.out.println(Thread.currentThread().getName() +"proceeding with the withdrawal");
                         Thread.sleep(3000);
                         balance -=amount;
-                        System.out.println(Thread.currentThread().getName() +"completed withdrawal.Remaining balance :"+amount);
+                        System.out.println(Thread.currentThread().getName() +"completed withdrawal.Remaining balance :"+balance);
                     }catch (Exception e){
                         Thread.currentThread().interrupt();
                     }

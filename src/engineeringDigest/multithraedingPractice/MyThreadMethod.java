@@ -39,6 +39,8 @@ public class MyThreadMethod extends Thread{
         t2.start();
         t3.start();
         t1.join();
+        t2.join();
+        t3.join();// here main thread will wait for t1, t2, t3 to finish  then it will print "Hello after 5 sec".
         System.out.println("Hello after 5 sec");
     }
 }
