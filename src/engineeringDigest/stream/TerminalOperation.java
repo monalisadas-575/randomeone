@@ -19,6 +19,8 @@ public class TerminalOperation {
        // list.stream().forEach( x-> System.out.println(x));
 
         // 3. Reduce
+        //todo reduce() combines stream elements into one result,
+        // and without an initial value it returns Optional because stream may be empty.
         Optional<Integer> optionalInteger = list.stream().reduce((x, y) -> x + y);
         System.out.println(optionalInteger.get());
 
