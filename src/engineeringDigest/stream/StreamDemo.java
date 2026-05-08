@@ -47,8 +47,16 @@ public class StreamDemo {
         Stream<String> stream2 = Stream.of("aa","bb","cc");
 
         // 4. infinity Stream   //Infinity Stream of 1 will be created and upto limit 50
+        //todo stream.generate() -> produce value independently
         Stream<Integer> generate = Stream.generate(() -> 1).limit(10);
         generate.forEach(System.out::println);
+        //for each is a terminal operation. It consumes stream and print it value and the operation.
+
+        //printing random number
+        Stream<Integer> generate2 = Stream.generate(() ->(int)(Math.random()*10)).limit(10);
+        generate2.forEach(System.out::println);
+
+        //todo stream.iterate() -> produce value based on previous value
          List<Integer> infinityList =Stream.iterate(1, x -> x + 5).limit(15).toList();
         System.out.println(infinityList);
     }
