@@ -21,8 +21,11 @@ public class TerminalOperation {
         // 3. Reduce
         //todo reduce() combines stream elements into one result,
         // and without an initial value it returns Optional because stream may be empty.
-        Optional<Integer> optionalInteger = list.stream().reduce((x, y) -> x + y);
+        Optional<Integer> optionalInteger = list.stream().reduce(Integer::sum);
         System.out.println(optionalInteger.get());
+        //todo with root value optional value will not return
+        Integer reduce = list.stream().reduce(100, ((x, y) -> x + y));
+        System.out.println("value without optional is stored :"+reduce); //115
 
         // 4. count
         // 5. anyMatch, allMatch, noneMatch
@@ -36,23 +39,32 @@ public class TerminalOperation {
         System.out.println(list.stream().findAny().get());
 
         //7. to Array()
-        Object[] array = Stream.of(1,2,3).toArray();
+        Object[] array = Stream.of(1,2,3,4,5).toArray();
+        System.out.println(Arrays.toString(array));
 
         // 8. min, max
         System.out.println(" max : " +Stream.of(2,44,69).max(Comparator.naturalOrder()));
+
+            //8,1 todo Comparator.comparing()
+        Optional<String> max = Stream.of("Mona", "Saumrit", "Amrit").max(Comparator.comparing(String::length));
+        System.out.println("Max string using Comparator.comparing() :"+max.get());
+            //8.2 todo thenComparing() -> 1st it compare by length then if same length then alphabetic order
+        Stream.of("Mona", "Saumrit", "Amrit").max(Comparator.comparing(String::length).thenComparing(String::compareTo));
+
 
         //Example
         List<String> names =Arrays.asList("Alice","Bob","jackson","Peter");
         Stream<String> stream = names.stream();
 
         //Stream can't be reused after terminal operation has been called.
-        stream.forEach(System.out::println);
+        stream.forEach(System.out::println); //here forEach() terminal operation
        // List<String> list1 = stream.map(String::toUpperCase).toList(); //exception
 
         // 9. forEachOrdered
         List<Integer> number0 = Arrays.asList(1,2,3,4,5,6,7,8,9);
         System.out.println("using forEach with parallel stream: ");
         number0.parallelStream().forEach(System.out::println);
+        //here in parallelStream multiple thread print this so we mayn't get the result in order
         System.out.println("using forEachOrdered with parallel stream");
         number0.parallelStream().forEachOrdered(System.out::println);
 
