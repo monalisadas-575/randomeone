@@ -38,7 +38,7 @@ public class IntermediateOperation {
         // 7. peek
         //performs  an action on each element as it is consumed
         Stream.iterate(1,x -> x + 1).limit(100).peek(System.out::println).count();
-        //here all 100 value will dispaly but not the count value 100.
+        //here all 100 value will display but not the count value 100.
         //for that we have to store it in long value then we can print it.
         long count1 = Stream.iterate(1, x -> x + 1).limit(100).peek(System.out::println).count();
         System.out.println(count1);

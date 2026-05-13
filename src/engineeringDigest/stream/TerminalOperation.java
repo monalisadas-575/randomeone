@@ -48,7 +48,7 @@ public class TerminalOperation {
             //8,1 todo Comparator.comparing()
         Optional<String> max = Stream.of("Mona", "Saumrit", "Amrit").max(Comparator.comparing(String::length));
         System.out.println("Max string using Comparator.comparing() :"+max.get());
-            //8.2 todo thenComparing() -> 1st it compare by length then if same length then alphabetic order
+            //8.2 todo thenComparing() -> 1st it compare by length then if same length then compare by alphabetic order
         Stream.of("Mona", "Saumrit", "Amrit").max(Comparator.comparing(String::length).thenComparing(String::compareTo));
 
 
