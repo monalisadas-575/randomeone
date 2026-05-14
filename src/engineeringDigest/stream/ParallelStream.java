@@ -34,7 +34,7 @@ public class ParallelStream {
         AtomicInteger sum = new AtomicInteger(0);
         List<Integer> cumulativeSum = numbers.parallelStream().map(sum::addAndGet).toList();
         AtomicInteger sum2 = new AtomicInteger(0);
-        List<Integer> cumulativeSumUsingSequentialStream =
+        List<Integer> cumulativeSumUsingSequentialStream = //sequential uses single thread. to get value order-dependent we use this
                 numbers.stream().sequential().map(sum2::addAndGet).toList();
         System.out.println("expected cumulative sum : [ 1, 3, 6 ,10 ,15 ]");
         System.out.println("actual result cumulative sum with parallelstream : "+cumulativeSum);

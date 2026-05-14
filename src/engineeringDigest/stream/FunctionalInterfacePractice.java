@@ -17,6 +17,7 @@ public class FunctionalInterfacePractice {
         Predicate<String> isWordEndingWithT = x -> x.toLowerCase().endsWith("t");
         Predicate<String> and=isWordEndingWithT.and(isWordStartingWithA);
         System.out.println(and.test("Ankit"));
+        System.out.println(isWordStartingWithA.test("knkit"));  //false
 
         //Function--->we can do the work
         Function<Integer, Integer>  doubleIt = x -> 2 * x;
