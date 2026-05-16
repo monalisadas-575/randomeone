@@ -11,6 +11,7 @@ public class StreamPractice {
         //Example-1 =show all the string with length lessthan 3
         List<String>  stringList= Arrays.asList("Mona","Monalisa","ma","mo","moana");
         System.out.println(stringList.stream().filter(x -> x.length() < 3).toList());
+        //Array.toString is used becoz while converting to Array it will print the hashcode so we are printing the toString value
         System.out.println(Arrays.toString(stringList.stream().filter(x -> x.length() < 3).toArray()));
 
         //Ex- 2= square and sort the numbers in the list

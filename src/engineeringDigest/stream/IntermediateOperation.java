@@ -3,6 +3,7 @@ package engineeringDigest.stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class IntermediateOperation {
@@ -16,6 +17,19 @@ public class IntermediateOperation {
         //no filtering till this point till termination operation
         long res = list.stream().filter(x -> x.startsWith("A")).count();
         System.out.println(res);
+        //below class implements predicate
+        class DunDun implements Predicate<String> {
+
+            @Override
+            public boolean test(String x) {
+                return x.startsWith("A");
+            }
+        }
+        List<String> list10  = list.stream().filter(new DunDun()).toList();
+        System.out.println(list10);
+        //here filter take predicate which return boolean to check hover on filter
+        list.stream().filter(x -> x.startsWith("A"));
+
 
         // 2. Map
         Stream<String> stringStream = list.stream().map(String::toUpperCase);

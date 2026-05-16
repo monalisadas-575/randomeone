@@ -24,6 +24,10 @@ public class CollectorsDemo {
         ArrayDeque<String> collect = names.stream()
                 .collect(Collectors.toCollection(() -> new ArrayDeque<>()));
 
+        System.out.println("printing arrayDeque_1 : "+collect);
+
+
+
         // 4.Joining String
         //Concatenate string element to a single stream
         String concatenatedNames = names.stream().map(String::toUpperCase).collect(Collectors.joining(" "));
@@ -40,8 +44,8 @@ public class CollectorsDemo {
         System.out.println("max :"+collect1.getAverage());
 
         // 6. Calculating Average
-        Double collect2 = numbers.stream().collect(Collectors.averagingInt(x -> x));
-        System.out.println(collect2);
+        Double collect3 = numbers.stream().collect(Collectors.averagingInt(x -> x));
+        System.out.println(collect3);
 
         //7. Counting elements
         Long count = numbers.stream().collect(Collectors.counting());
