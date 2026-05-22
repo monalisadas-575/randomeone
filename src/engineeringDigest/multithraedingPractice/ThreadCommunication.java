@@ -48,7 +48,7 @@ class Producer implements Runnable{
     }
 }
 
-class Consumer implements Runnable{
+class  Consumer implements Runnable{
     private SharedResource resource;
 
     public Consumer(SharedResource resource) {

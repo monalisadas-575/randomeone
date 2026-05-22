@@ -29,6 +29,8 @@ public class ReadWriteCounter {
 
     public static void main(String[] args) throws InterruptedException {
         ReadWriteCounter counter = new ReadWriteCounter();
+
+
         Runnable readTask = new Runnable() {
             @Override
             public void run() {
