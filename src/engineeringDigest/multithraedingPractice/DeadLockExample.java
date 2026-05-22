@@ -11,7 +11,7 @@ class Pen{
     }
 }
 
-class Paper{
+class  Paper{
     public synchronized void writeWithPaperAndPen(Pen pen){
         System.out.println(Thread.currentThread().getName() +" is using paper "+ this.getClass().getName()+ " and trying to use pen "+pen.getClass().getName());
         pen.finishWriting();

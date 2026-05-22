@@ -29,8 +29,8 @@ public class MyRetrantLock {
 
     public static void main(String[] args) {
         MyRetrantLock mr1 = new MyRetrantLock();
-       // MyRetrantLock mr2 = new MyRetrantLock();
+        //MyRetrantLock mr2 = new MyRetrantLock();
         mr1.outerMethod();
-        //mr2.innerMethod();
+       // mr2.innerMethod();
     }
 }
