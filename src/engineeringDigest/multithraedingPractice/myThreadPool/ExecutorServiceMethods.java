@@ -12,7 +12,7 @@ public class ExecutorServiceMethods {
         System.out.println(future.get());
         ex.shutdown();
         System.out.println(ex.isShutdown());
-        //Thread.sleep(2);  without tis sleep line is Terminated will show false
+        Thread.sleep(2);  //without this sleep line is Terminated will show false
         // because suddenly after shutdown thraed wont be terminated right away
         System.out.println(ex.isTerminated());
     }
