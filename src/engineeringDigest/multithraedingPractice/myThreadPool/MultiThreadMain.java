@@ -8,7 +8,7 @@ public class MultiThreadMain {
             int finalI = i;
             threads[i-1] = new Thread(() -> {
                 long result = factorial(finalI);
-                System.out.println(Thread.currentThread().getName() +result);
+                System.out.println(Thread.currentThread().getName()+ " result = "+result);
             });
             threads[i-1].start();
         }
