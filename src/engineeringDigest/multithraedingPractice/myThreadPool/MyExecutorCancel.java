@@ -1,5 +1,6 @@
 package engineeringDigest.multithraedingPractice.myThreadPool;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -18,11 +19,12 @@ public class MyExecutorCancel {
                 return 42;
         });
         try {    //todo here we are doing work by the main thread so as it is working submit.cancel(false) will not interruot here.
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
+            Thread.sleep(1000);
+        } catch (InterruptedException  e) {
             e.printStackTrace();
         }
         submit.cancel(false); //it will cancel the work even if it is running sumbit.cancel(true)
+
         //if it is false then it will not stop running thread.
         System.out.println(submit.isCancelled());
         executor.shutdown();
